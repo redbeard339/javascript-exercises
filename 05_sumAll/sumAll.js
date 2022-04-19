@@ -11,7 +11,9 @@ const sumAll = function (a, b) {
         smaller = a;
     }
 
-    if ((a < 0 || b < 0)) {
+    if ((a < 0 || b < 0) || 
+        (typeof a === 'string' || typeof b === 'string') ||
+        (isNaN(a) || isNaN(b))) {
         return 'ERROR';
     } else {
         for (let i = smaller; i <= larger; i++) {
